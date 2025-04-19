@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router";
 
 //admin
 import AdminProtectedRoute from "@/routes/protected_routes/AdminProtectedRoute";
-// import { AdminLayout } from "@/pages/admin/AdminLayout";
+import { AdminLayout } from "@/pages/admin/AdminLayout";
 
 //profile
 // import ProfileLayout from "../pages/profile/ProfileLayout";
@@ -24,7 +24,7 @@ export const AppRoutes = ({ userRole }: { userRole: string }) => {
           path="/admin"
           element={
             <AdminProtectedRoute role={userRole} redirectPath="*">
-              {/* <AdminLayout role={userRole} /> */}
+               <AdminLayout role={userRole} />
             </AdminProtectedRoute>
           }
         >

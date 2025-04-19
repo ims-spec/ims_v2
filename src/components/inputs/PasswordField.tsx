@@ -5,11 +5,13 @@ import Visibility from "@mui/icons-material/Visibility";
 
 export const PasswordField = ({
                                   showPassword,
+                                  label,
                                   handleClickShowPassword,
                                   handleMouseDownPassword,
                                   handleMouseUpPassword,
                                   setPassword,
                               }: {
+    label: string;
     showPassword?: boolean;
     handleClickShowPassword: () => void;
     handleMouseDownPassword: () => void;
@@ -18,7 +20,7 @@ export const PasswordField = ({
 }) => {
     return (
         <FormControl sx={{m: 1, width: '250px'}} variant="standard">
-            <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+            <InputLabel htmlFor="standard-adornment-password">{label}</InputLabel>
             <Input
                 id="standard-adornment-password"
                 type={showPassword ? 'text' : 'password'}
@@ -36,7 +38,7 @@ export const PasswordField = ({
                         </IconButton>
                     </InputAdornment>
                 }
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
             />
         </FormControl>
     );

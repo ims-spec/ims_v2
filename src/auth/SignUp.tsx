@@ -46,7 +46,7 @@ export const SignUp: React.FC<ChildComponentProps> = ({
             return setErrorMessage("Пароли не совпадают!");
         }
 
-        signUpAuth({email: email, password: password});
+        signUpAuth({email: email, password: password}).then();
     };
 
     const checkForUppercase = (value: string) => {
@@ -139,7 +139,9 @@ export const SignUp: React.FC<ChildComponentProps> = ({
                 autoComplete="off"
                 onSubmit={signUpHandler}
             >
+
                 <Stack spacing={2}>
+                    {isError && errorMessage}
                     <FormControl sx={{m: 1, width: '250px'}} variant="standard" fullWidth error={true}>
                         <InputLabel htmlFor="input-email">Email</InputLabel>
                         <Input type='email' id='input-email' onChange={(e) => setEmail(e.target.value)}/>
